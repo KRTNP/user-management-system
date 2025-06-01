@@ -68,4 +68,4 @@ The server will start at http://localhost:3000 (or the port specified in your .e
 This application is created for educational purposes. It may contain security vulnerabilities or implementation flaws as it's designed for learning and practice. Use at your own risk.
 
 ## License
-ISC
+MIT License
