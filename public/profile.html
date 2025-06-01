@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile | User Management System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .profile-container {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        .profile-header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .profile-details {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .nav-tabs {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html">User Management System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="logout-btn">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container profile-container">
+        <div class="profile-header text-center">
+            <img src="https://via.placeholder.com/150" alt="Profile Image" class="profile-image mb-3">
+            <h2 id="user-fullname">User Name</h2>
+            <p class="text-muted" id="user-role">User Role</p>
+        </div>
+
+        <ul class="nav nav-tabs" id="profileTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button" role="tab" aria-controls="security" aria-selected="false">Security</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="activity-tab" data-bs-toggle="tab" data-bs-target="#activity" type="button" role="tab" aria-controls="activity" aria-selected="false">Activity</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="profileTabsContent">
+            <div class="tab-pane fade show active profile-details" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <h3>Personal Information</h3>
+                <form id="profile-form">
+                    <div class="mb-3 row">
+                        <label for="username" class="col-sm-3 col-form-label">Username</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="username" readonly>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="email" class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="firstName" class="col-sm-3 col-form-label">First Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="firstName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="lastName" class="col-sm-3 col-form-label">Last Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="lastName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="phone" class="col-sm-3 col-form-label">Phone</label>
+                        <div class="col-sm-9">
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="tab-pane fade profile-details" id="security" role="tabpanel" aria-labelledby="security-tab">
+                <h3>Security Settings</h3>
+                <form id="password-form">
+                    <div class="mb-3">
+                        <label for="currentPassword" class="form-label">Current Password</label>
+                        <input type="password" class="form-control" id="currentPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label">New Password</label>
+                        <input type="password" class="form-control" id="newPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" required>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary">Change Password</button>
+                    </div>
+                </form>
+                <hr>
+                <h3>Two-Factor Authentication</h3>
+                <p>Add an extra layer of security to your account.</p>
+                <button id="enable2fa" class="btn btn-outline-primary">Enable 2FA</button>
+            </div>
+            
+            <div class="tab-pane fade profile-details" id="activity" role="tabpanel" aria-labelledby="activity-tab">
+                <h3>Recent Activity</h3>
+                <ul class="list-group" id="activity-list">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>Login</strong>
+                            <p class="text-muted mb-0">You logged in from 192.168.1.1</p>
+                        </div>
+                        <span class="text-muted">Just now</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>Password Changed</strong>
+                            <p class="text-muted mb-0">You changed your password</p>
+                        </div>
+                        <span class="text-muted">Yesterday</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>Profile Updated</strong>
+                            <p class="text-muted mb-0">You updated your profile information</p>
+                        </div>
+                        <span class="text-muted">3 days ago</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script/profile.js"></script>
+</body>
+</html>
