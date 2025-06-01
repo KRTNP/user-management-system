@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    <main class="min-h-screen flex items-center justify-center px-4">
+      <div class="w-full max-w-md">
+        <h2 class="text-2xl font-semibold text-center mb-6">Login</h2>
+        
+        <!-- Alert Box -->
+        <div id="alertBox" class="hidden"></div>
+
+        <form id="loginForm" class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+          <div>
+            <label for="loginUsername" class="block text-sm font-medium">Username</label>
+            <input
+              id="loginUsername"
+              name="username"
+              type="text"
+              placeholder="Username"
+              class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
+              required
+            />
+          </div>
+          <div>
+            <label for="loginPassword" class="block text-sm font-medium">Password</label>
+            <input
+              id="loginPassword"
+              name="password"
+              type="password"
+              placeholder="Password"
+              class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
+              required
+            />
+          </div>
+          <button
+            type="button"
+            id="loginUser"
+            class="w-full bg-green-600 text-white py-2.5 rounded hover:bg-green-700 transition"
+          >
+            Login
+          </button>
+        </form>
+
+        <p class="text-sm text-center text-gray-500 mt-4">
+          New here?
+          <a href="register.html" class="text-blue-600 underline">Create an account</a>
+        </p>
+        <p class="text-center text-xs text-gray-400 mt-6">
+          &copy;2023 Acme Corp. All rights reserved.
+        </p>
+      </div>
+    </main>
+    <!-- Updated script path -->
+    <script src="/script/script.js"></script>
+  </body>
+</html>
